@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />                      
+    <title>Yummy</title>
+    </head>
+
+    <body cz-shortcut-listen="true" style="overflow: visible">
+    <div
+        class="loading-screen position-fixed top-0 start-0 end-0 bottom-0 bg-black justify-content-center align-items-center"
+        style="display: none"
+    >
+        <i class="fa fa-spinner fa-spin fa-5x"></i>
+    </div>
+
+    <div
+        class="side-nav-menu min-vh-100 position-fixed d-flex top-0"
+        style="left: -250px"
+    >  
+        <div
+        class="nav-tab d-flex flex-column justify-content-between min-vh-100 p-4"
+        >
+        <div class="links">
+            <ul class="list-unstyled overflow-hidden">
+            <li
+                onclick="showSearchInputs(); closeSideNav()"
+                class="py-2 position-relative cursor-pointer"
+            >
+                Search
+            </li>
+            <li
+                onclick="getCategories(); closeSideNav()"
+                class="py-2 position-relative cursor-pointer"
+                >
+                Categories
+                </li>
+                <li
+                onclick="getArea(); closeSideNav()"
+                class="py-2 position-relative cursor-pointer"
+                    >
+                Area
+                </li>
+                <li
+                onclick="getIngredients(); closeSideNav()"
+                class="py-2 position-relative cursor-pointer"
+                >
+                Ingredients
+                </li>
+                <li
+                onclick="showContacts(); closeSideNav()"
+                class="py-2 position-relative cursor-pointer"
+                >
+                Contact Us
+                </li>
+            </ul>
+            </div>
+            <div class="nav-footer">
+            <div class="icons">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-solid fa-globe"></i>
+            </div>
+            <div class="footer">
+                <p>Copyright Â© 2019 All Rights <br />Reserved.</p>
+            </div>
+            </div>
+        </div>
+        <div
+            class="nav-header d-flex flex-column justify-content-between py-4 text-center px-2 bg-white text-black"
+        >
+            <img class="logo" src="img/logo.png" alt="" srcset="" />
+            <i class="fa-solid open-close-icon fa-2x fa-align-justify"></i>
+            <div>
+            <i class="fa-solid fa-globe d-block"></i>
+            <i class="fa-solid fa-share-nodes"></i>
+            </div>
+        </div>
+        </div>
+
+        <div class="container w-75" id="searchContainer"></div>
+
+        <div class="min-vh-100 position-relative">
+        <div
+            class="inner-loading-screen top-0 start-0 end-0 bottom-0 justify-content-center align-items-center"
+            style="display: none"
+        >
+            <i class="fa fa-spinner fa-spin fa-5x"></i>
+        </div>
+
+        <div class="container">
+            <div class="row py-5 g-4" id="rowData">
+            <div class="col-md-3">
+                <div
+                onclick="getMealDetails(&#39;52977&#39;)"
+                class="meal position-relative overflow-hidden rounded-2 cursor-pointer"
+                >
+                <img
+                    class="w-100"
+                    src="img/corba.jpg"
+                    alt=""
+                    srcset=""
+                />
+                <div
+                    class="meal-layer position-absolute d-flex align-items-center text-black p-2"
+                >
+                    <h3>Corba</h3>
+                </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div
+                onclick="getMealDetails(&#39;53060&#39;)"
+                class="meal position-relative overflow-hidden rounded-2 cursor-pointer"
+                >
+                <img
+                    class="w-100"
+                    src="img/burek.jpg"
+                    alt=""
+                    srcset=""
+                />
+                <div
+                    class="meal-layer position-absolute d-flex align-items-center text-black p-2"
+                >
+                    <h3>Burek</h3>
+                </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div
+                onclick="getMealDetails(&#39;53065&#39;)"
+                class="meal position-relative overflow-hidden rounded-2 cursor-pointer"
+                >
+                <img
+                    class="w-100"
+                    src="img/sushi.jpg"
+                    alt=""
+                    srcset=""
+                />
+                <div
+                    class="meal-layer position-absolute d-flex align-items-center text-black p-2"
+                >
+                    <h3>Sushi</h3>
+                </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div
+                onclick="getMealDetails(&#39;52978&#39;)"
+                class="meal position-relative overflow-hidden rounded-2 cursor-pointer"
+                >
+                <img
+                    class="w-100"
+                    src="img/kumpir.jpg"
+                    alt=""
+                    srcset=""
+                />
+                <div
+                    class="meal-layer position-absolute d-flex align-items-center text-black p-2"
+                >
+                    <h3>Kumpir</h3>
+                </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div
+                onclick="getMealDetails(&#39;53069&#39;)"
+                class="meal position-relative overflow-hidden rounded-2 cursor-pointer"
+                >
+                <img
+                    class="w-100"
+                    src="img/bistek.jpg"
+                    alt=""
+                    srcset=""
+                />
+                <div
+                    class="meal-layer position-absolute d-flex align-items-center text-black p-2"
+                >
+                    <h3>Bistek</h3>
+                </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div
+                onclick="getMealDetails(&#39;53026&#39;)"
+                class="meal position-relative overflow-hidden rounded-2 cursor-pointer"
+                >
+                <img
+                    class="w-100"
+                    src="img/tamiya.jpg"
+                    alt=""
+                    srcset=""
+                />
+                <div
+                    class="meal-layer position-absolute d-flex align-items-center text-black p-2"
+                >
+                    <h3>Tamiya</h3>
+                </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div
+                onclick="getMealDetails(&#39;52971&#39;)"
+                class="meal position-relative overflow-hidden rounded-2 cursor-pointer"
+                >
+                <img
+                    class="w-100"
+                    src="img/kafteji.jpg"
+                    alt=""
+                    srcset=""
+                />
+                <div
+                    class="meal-layer position-absolute d-flex align-items-center text-black p-2"
+                >
+                    <h3>Kafteji</h3>
+                </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div
+                onclick="getMealDetails(&#39;52844&#39;)"
+                class="meal position-relative overflow-hidden rounded-2 cursor-pointer"
+                >
+                <img
+                    class="w-100"
+                    src="img/Lasagne.jpg"
+                    alt=""
+                    srcset=""
+                />
+                <div
+                    class="meal-layer position-absolute d-flex align-items-center text-black p-2"
+                >
+                    <h3>Lasagne</h3>
+                </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div
+                onclick="getMealDetails(&#39;52785&#39;)"
+                class="meal position-relative overflow-hidden rounded-2 cursor-pointer"
+                >
+                <img
+                    class="w-100"
+                    src="img/Dalfry.jpg"
+                    alt=""
+                    srcset=""
+                />
+                <div
+                    class="meal-layer position-absolute d-flex align-items-center text-black p-2"
+                >
+                    <h3>Dal fry</h3>
+                </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div
+                onclick="getMealDetails(&#39;52948&#39;)"
+                class="meal position-relative overflow-hidden rounded-2 cursor-pointer"
+                >
+                <img
+                    class="w-100"
+                    src="img/wontons.jpg"
+                    alt=""
+                    srcset=""
+                />
+                <div
+                    class="meal-layer position-absolute d-flex align-items-center text-black p-2"
+                >
+                    <h3>Wontons</h3>
+                </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div
+                onclick="getMealDetails(&#39;52804&#39;)"
+                class="meal position-relative overflow-hidden rounded-2 cursor-pointer"
+                >
+                <img
+                    class="w-100"
+                    src="img/poutine.jpg"
+                    alt=""
+                    srcset=""
+                />
+                <div
+                    class="meal-layer position-absolute d-flex align-items-center text-black p-2"
+                >
+                    <h3>Poutine</h3>
+                </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div
+                onclick="getMealDetails(&#39;52929&#39;)"
+                class="meal position-relative overflow-hidden rounded-2 cursor-pointer"
+                >
+                <img
+                    class="w-100"
+                    src="img/timbits.jpg"
+                    alt=""
+                    srcset=""
+                />
+                <div
+                    class="meal-layer position-absolute d-flex align-items-center text-black p-2"
+                >
+                    <h3>Timbits</h3>
+                </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div
+                onclick="getMealDetails(&#39;53027&#39;)"
+                class="meal position-relative overflow-hidden rounded-2 cursor-pointer"
+                >
+                <img
+                    class="w-100"
+                    src="img/koshari.jpg"
+                    alt=""
+                    srcset=""
+                />
+                <div
+                    class="meal-layer position-absolute d-flex align-items-center text-black p-2"
+                >
+                    <h3>Koshari</h3>
+                </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div
+                onclick="getMealDetails(&#39;53013&#39;)"
+                class="meal position-relative overflow-hidden rounded-2 cursor-pointer"
+                >
+                <img
+                    class="w-100"
+                    src="img/BigMac.jpg"
+                    alt=""
+                    srcset=""
+                />
+                <div
+                    class="meal-layer position-absolute d-flex align-items-center text-black p-2"
+                >
+                    <h3>Big Mac</h3>
+                </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div
+                onclick="getMealDetails(&#39;53028&#39;)"
+                class="meal position-relative overflow-hidden rounded-2 cursor-pointer"
+                >
+                <img
+                    class="w-100"
+                    src="img/shawarma.jpg"
+                    alt=""
+                    srcset=""
+                />
+                <div
+                    class="meal-layer position-absolute d-flex align-items-center text-black p-2"
+                >
+                    <h3>Shawarma</h3>
+                </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div
+                onclick="getMealDetails(&#39;52980&#39;)"
+                class="meal position-relative overflow-hidden rounded-2 cursor-pointer"
+                >
+                <img
+                    class="w-100"
+                    src="img/stamppot.jpg"
+                    alt=""
+                    srcset=""
+                />
+                <div
+                    class="meal-layer position-absolute d-flex align-items-center text-black p-2"
+                >
+                    <h3>Stamppot</h3>
+                </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div
+                onclick="getMealDetails(&#39;52769&#39;)"
+                class="meal position-relative overflow-hidden rounded-2 cursor-pointer"
+                >
+                <img
+                    class="w-100"
+                    src="img/kapsalon.jpg"
+                    alt=""
+                    srcset=""
+                />
+                <div
+                    class="meal-layer position-absolute d-flex align-items-center text-black p-2"
+                >
+                    <h3>Kapsalon</h3>
+                </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div
+                onclick="getMealDetails(&#39;52887&#39;)"
+                class="meal position-relative overflow-hidden rounded-2 cursor-pointer"
+                >
+                <img
+                    class="w-100"
+                    src="img/kedgeree.jpg"
+                    alt=""
+                    srcset=""
+                />
+                <div
+                    class="meal-layer position-absolute d-flex align-items-center text-black p-2"
+                >
+                    <h3>Kedgeree</h3>
+                </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div
+                onclick="getMealDetails(&#39;52802&#39;)"
+                class="meal position-relative overflow-hidden rounded-2 cursor-pointer"
+                >
+                <img
+                    class="w-100"
+                    src="img/Fishpie.jpg"
+                    alt=""
+                    srcset=""
+                />
+                <div
+                    class="meal-layer position-absolute d-flex align-items-center text-black p-2"
+                >
+                    <h3>Fish pie</h3>
+                </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div
+                onclick="getMealDetails(&#39;52906&#39;)"
+                class="meal position-relative overflow-hidden rounded-2 cursor-pointer"
+                >
+                <img
+                    class="w-100"
+                    src="img/flamiche.jpg"
+                    alt=""
+                    srcset=""
+                />
+                <div
+                    class="meal-layer position-absolute d-flex align-items-center text-black p-2"
+                >
+                    <h3>Flamiche</h3>
+                </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div
+                onclick="getMealDetails(&#39;52854&#39;)"
+                class="meal position-relative overflow-hidden rounded-2 cursor-pointer"
+                >
+                <img
+                    class="w-100"
+                    src="img/pancakes.jpg"
+                    alt=""
+                    srcset=""
+                />
+                <div
+                    class="meal-layer position-absolute d-flex align-items-center text-black p-2"
+                >
+                    <h3>Pancakes</h3>
+                </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div
+                onclick="getMealDetails(&#39;53006&#39;)"
+                class="meal position-relative overflow-hidden rounded-2 cursor-pointer"
+                >
+                <img
+                    class="w-100"
+                    src="img/moussaka.jpg"
+                    alt=""
+                    srcset=""
+                />
+                <div
+                    class="meal-layer position-absolute d-flex align-items-center text-black p-2"
+                >
+                    <h3>Moussaka</h3>
+                </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div
+                onclick="getMealDetails(&#39;52791&#39;)"
+                class="meal position-relative overflow-hidden rounded-2 cursor-pointer"
+                >
+                <img
+                    class="w-100"
+                    src="img/EtonMess.jpg"
+                    alt=""
+                    srcset=""
+                />
+                <div
+                    class="meal-layer position-absolute d-flex align-items-center text-black p-2"
+                >
+                    <h3>Eton Mess</h3>
+                </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div
+                onclick="getMealDetails(&#39;52871&#39;)"
+                class="meal position-relative overflow-hidden rounded-2 cursor-pointer"
+                >
+                <img
+                    class="w-100"
+                    src="img/YakiUdon.jpg"
+                    alt=""
+                    srcset=""
+                />
+                <div
+                    class="meal-layer position-absolute d-flex align-items-center text-black p-2"
+                >
+                    <h3>Yaki Udon</h3>
+                </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div
+                onclick="getMealDetails(&#39;53052&#39;)"
+                class="meal position-relative overflow-hidden rounded-2 cursor-pointer"
+                >
+                <img
+                    class="w-100"
+                    src="img/Rotijohn.jpg"
+                    alt=""
+                    srcset=""
+                />
+                <div
+                    class="meal-layer position-absolute d-flex align-items-center text-black p-2"
+                >
+                    <h3>Roti john</h3>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+    </body>
+</html>
